@@ -136,9 +136,26 @@ static const char PROGMEM triforce_img[] = {
       0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  1,  1,  3,  3,  7,  7, 15, 15, 31, 31, 63, 63,
 };
 
+void render_layer_state_user(void) {
+    switch (get_highest_layer(layer_state)) {
+        case 0:
+            oled_write_raw_P(layer0_img, sizeof(layer0_img));
+            break;
+        case 1:
+            oled_write_raw_P(layer1_img, sizeof(layer1_img));
+            break;
+        case 2:
+            oled_write_raw_P(layer2_img, sizeof(layer2_img));
+            break;
+        case 3:
+            oled_write_raw_P(layer3_img, sizeof(layer3_img));
+            break;
+    }
+}
+
 bool oled_task_user(void) {
    if (is_keyboard_master()) {
-        render_layer_state();
+        render_layer_state_user();
     } else {
         oled_write_raw_P(triforce_img, sizeof(triforce_img));
     }
