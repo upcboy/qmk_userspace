@@ -135,3 +135,12 @@ static const char PROGMEM triforce_img[] = {
       0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
       0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  1,  1,  3,  3,  7,  7, 15, 15, 31, 31, 63, 63,
 };
+
+bool oled_task_user(void) {
+   if (is_keyboard_master()) {
+        render_layer_state();
+    } else {
+        oled_write_raw_P(triforce_img, sizeof(triforce_img));
+    }
+   return false;
+}
