@@ -55,9 +55,7 @@
         "split": {
             "transport": {
                 "sync": {
-                    "matric": {
-                        "matrix_state": true
-                    }
+                    "matrix_state": true
                 }
             }
         }
