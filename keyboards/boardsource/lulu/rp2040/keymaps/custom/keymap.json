@@ -51,6 +51,15 @@
             "starlight_dual_sat": true,
             "riverflow": true
             }
+        },
+        "split": {
+            "transport": {
+                "sync": {
+                    "matric": {
+                        "matrix_state": true
+                    }
+                }
+            }
         }
     }
 }
