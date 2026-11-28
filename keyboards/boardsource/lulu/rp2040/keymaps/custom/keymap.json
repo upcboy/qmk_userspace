@@ -53,6 +53,9 @@
                     "matrix_state": true
                 }
             }
+        },
+        "dynamic_keymap": {
+            "layer_count": 5
         }
     }
 }
